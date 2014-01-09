@@ -1,0 +1,43 @@
+body {
+	background-color: #123456;
+	margin: 0;
+	font-size: 1em;
+	font-family: Arial;
+}
+h1 {
+	font-size: 2em;
+}
+#header {
+	background-color: #eeeeee;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 20%;
+	position: absolute;
+}
+#content {
+	background-color: #ffffff;
+	left: 0%;
+	top: 20%;
+	width: 100%;
+	height: 69%;
+	position: absolute;
+}
+#footer {
+	background-color: #eeeeee;
+	left: 0%;
+	top: 89%;
+	width: 100%;
+	height: 10%;
+	position: absolute;
+}
+.closer {
+	padding: 0;
+	margin: 0;
+}
+.bottom_text {
+	bottom: 100px;
+}
+.center_text {
+	text-align: center;
+}

@@ -2,13 +2,10 @@ body {
 	background-color: #123456;
 	margin: 0;
 	font-size: 1em;
-	font-family: 'Alegreya Sans', sans-serif;
-}
-h1 {
-	font-size: 2em;
+	font-family: 'Oxygen Mono', sans-serif;
 }
 #header {
-	background-color: #eeeeee;
+	background-color: #fefefe;
 	left: 0%;
 	top: 0%;
 	width: 100%;

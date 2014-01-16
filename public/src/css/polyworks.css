@@ -2,7 +2,8 @@ body {
 	background-color: #123456;
 	margin: 0;
 	font-size: 1em;
-	font-family: 'Oxygen Mono', sans-serif;
+/*	font-family: 'Oxygen Mono', sans-serif;*/
+	font-family: 'Arial', sans-serif;
 }
 #header {
 	background-color: #fefefe;

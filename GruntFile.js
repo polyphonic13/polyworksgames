@@ -5,14 +5,19 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		pkg: grunt.file.readJSON('package.json'),
+		meta: grunt.file.readJSON('grunt/data/meta.json'),
 
 		srcDir: 'public/src',
-		deployDir: 'public/deploy',
+		buildDir: 'public/build',
 
-/////// CONCAT 
+		// CLEAN
+		// docs: https://github.com/gruntjs/grunt-contrib-clean
+		clean:  {
+			removeDeployDir: ['<%= buildDir %>']
+		},
+		// CONCAT 
+		// task docs: https://github.com/gruntjs/grunt-contrib-concat
 		concat: {
-			// task docs: https://github.com/gruntjs/grunt-contrib-concat
-
 			options: {
 
 				// default banner inserted at top of the output file (overridden for some files below)
@@ -31,21 +36,17 @@ module.exports = function(grunt) {
 				nonull: true
 
 			},
-			site: {
+			main: {
 				options: {
 					banner: "(function(){(typeof console === 'undefined' || typeof console.log === 'undefined')?console={log:function(){}}:console.log('----- KEKE_GAME.JS v<%= pkg.version %> created: <%= grunt.template.today(\"isoDateTime\") %>')})();\n"
 				},
-				src: [
-					// THIRD PARTY
-					'<%= srcDir %>/js/third_party/phaser.min.js'
-				],
-				dest: '<%= deployDir %>/keke2/js/keke2_game.js'
+				src: [],
+				dest: ''
 			}
 		},
-/////// MINIFICATION
+		// MINIFICATION
+		// task docs: https://github.com/gruntjs/grunt-contrib-uglify
 		uglify: {
-			// task docs: https://github.com/gruntjs/grunt-contrib-uglify
-
 			options: {
 
 				// banner inserted at top of the output file
@@ -55,57 +56,103 @@ module.exports = function(grunt) {
 				// report: 'gzip'
 				report: 'min'
 			},
-
-			site: {
-				src: [ '<%= deployDir %>/keke2/js/keke2_game.js' ],
-				dest: '<%= deployDir %>/keke2/js/keke2_game.min.js'
+			main: {
+				src: [ '' ],
+				dest: ''
 			}
-
 		},
-/////// COPYING
+		// COPYING
+		// task docs: https://github.com/gruntjs/grunt-contrib-copy
 		copy: {
-			// task docs: https://github.com/gruntjs/grunt-contrib-copy
-			html: {
-				files: [{
-					expand: true,
-					cwd: '<%= srcDir %>/',
-					src: [ '*.html' ],
-					dest: '<%= deployDir %>/'
-				}]
-			},
-			images: {
+			main: {
 				files: [{
 					expand: true,
 					cwd: '<%= srcDir %>/images/',
 					src: [ '**' ],
-					dest: '<%= deployDir %>/images/'
-				}]
-			},
-
- 			keke2_game_css: {
-				files: [{
+					dest: '<%= buildDir %>/images/'
+				},
+				{
 					expand: true, 
 					cwd: '<%= srcDir %>/css/',
 					src: [ '**' ],
-					dest: '<%= deployDir %>/css/'
+					dest: '<%= buildDir %>/css/'
+				},
+				{
+					expand: true,
+					cwd: '<%= srcDir %>/',
+					src: [ '*.html' ],
+					dest: '<%= buildDir %>/'
 				}]
 			}
 		},
-/////// LOCAL SERVER
+		// LOCAL SERVER
+		// docs: https://github.com/iammerrick/grunt-connect
 		connect: {
-			// docs: https://github.com/iammerrick/grunt-connect
-			devel: {
-				port: 9998,
-				base: 'public',
-				keepAlive: true
+			port: 9090,
+			keepAlive: true
+		},
+
+		// SCP
+		scp: {
+			options: {
+				host: '<%= meta.server.host %>',
+				username: '<%= meta.server.user %>',
+				password: '<%= meta.server.pass%>'
+			},
+			main: {
+				files: [
+				{
+					cwd: '<%= buildDir %>/images/',
+					src: '**/*',
+					filter: 'isFile',
+					dest: '<%= meta.server.path %>/<%= tgt %>/images/'
+				},
+				{
+					cwd: '<%= buildDir %>/css/',
+					src: '**/*',
+					filter: 'isFile',
+					dest: '<%= meta.server.path %>/<%= tgt %>/css/'
+				},
+				{
+					cwd: '<%= buildDir %>/js/',
+					src: '**/*',
+					filter: 'isFile',
+					dest: '<%= meta.server.path %>/<%= tgt %>/js/'
+				},
+				{
+					cwd: '<%= buildDir %>',
+					src: '**/*.html',
+					filter: 'isFile',
+					dest: '<%= meta.server.path %>/<%= tgt %>'
+				}
+				]
 			}
+			
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-scp');
 	grunt.loadNpmTasks('grunt-connect');
 	
-	grunt.registerTask('default', ['concat', 'uglify', 'copy']);
+	grunt.registerTask(
+		'default', 
+		[
+			'clean',
+			// 'concat', 
+			// 'uglify', 
+			'copy'
+		]
+	);
+	
+	grunt.registerTask(
+		'deploy',
+		[
+			'default',
+			'scp'
+		]
+	);
 };

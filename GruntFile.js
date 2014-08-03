@@ -88,8 +88,11 @@ module.exports = function(grunt) {
 		// LOCAL SERVER
 		// docs: https://github.com/iammerrick/grunt-connect
 		connect: {
-			port: 9090,
-			keepAlive: true
+			server: { 
+				port: 9090,
+				base: 'public',
+				keepAlive: true
+			}
 		},
 
 		// SCP

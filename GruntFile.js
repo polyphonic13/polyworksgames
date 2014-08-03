@@ -65,17 +65,30 @@ module.exports = function(grunt) {
 		// task docs: https://github.com/gruntjs/grunt-contrib-copy
 		copy: {
 			main: {
-				files: [{
+				files: [
+				{
 					expand: true,
-					cwd: '<%= srcDir %>/images/',
+					cwd: '<%= srcDir %>/img/',
 					src: [ '**' ],
-					dest: '<%= buildDir %>/images/'
+					dest: '<%= buildDir %>/img/'
 				},
 				{
 					expand: true, 
 					cwd: '<%= srcDir %>/css/',
 					src: [ '**' ],
 					dest: '<%= buildDir %>/css/'
+				},
+				{
+					expand: true, 
+					cwd: '<%= srcDir %>/font-awesome-4.1.0/',
+					src: [ '**' ],
+					dest: '<%= buildDir %>/font-awesome-4.1.0/'
+				},
+				{
+					expand: true, 
+					cwd: '<%= srcDir %>/js/',
+					src: [ '**' ],
+					dest: '<%= buildDir %>/js/'
 				},
 				{
 					expand: true,
@@ -105,28 +118,34 @@ module.exports = function(grunt) {
 			main: {
 				files: [
 				{
-					cwd: '<%= buildDir %>/images/',
+					cwd: '<%= buildDir %>/img/',
 					src: '**/*',
 					filter: 'isFile',
-					dest: '<%= meta.server.path %>/<%= tgt %>/images/'
+					dest: '<%= meta.server.path %>/img/'
 				},
 				{
 					cwd: '<%= buildDir %>/css/',
 					src: '**/*',
 					filter: 'isFile',
-					dest: '<%= meta.server.path %>/<%= tgt %>/css/'
+					dest: '<%= meta.server.path %>/css/'
+				},
+				{
+					cwd: '<%= buildDir %>/font-awesome-4.1.0/',
+					src: '**/*',
+					filter: 'isFile',
+					dest: '<%= meta.server.path %>/font-awesome-4.1.0/'
 				},
 				{
 					cwd: '<%= buildDir %>/js/',
 					src: '**/*',
 					filter: 'isFile',
-					dest: '<%= meta.server.path %>/<%= tgt %>/js/'
+					dest: '<%= meta.server.path %>/js/'
 				},
 				{
 					cwd: '<%= buildDir %>',
 					src: '**/*.html',
 					filter: 'isFile',
-					dest: '<%= meta.server.path %>/<%= tgt %>'
+					dest: '<%= meta.server.path %>/'
 				}
 				]
 			}

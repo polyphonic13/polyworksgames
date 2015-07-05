@@ -1,0 +1,132 @@
+html, body {
+	background: black;
+	
+	margin: 0;
+	padding: 0;
+	
+	font-family: Helvetica;
+	color: black;
+}
+
+#icon_p {
+	background: url(../img/polyworks_title.png) no-repeat center;
+	background-size: contain;
+	width: 100%;
+	padding-bottom: 100%;
+	left: 0%;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+#nav {
+	
+}
+
+.centered_title {
+	text-align: center;
+}
+
+.blue1 {
+	color: #7a839c;
+}
+
+.text_xl {
+	font-size: 300%;
+}
+.text_lg {
+	font-size: 150%;
+}
+.text_md {
+	font-size: 100%;
+}
+.text_sm {
+	font-size: 75%;
+}
+.text_xs {
+	font-size: 50%;
+}
+
+@media all and (max-width: 320px) {
+	#icon_p {
+		width: 100%;
+		padding-bottom: 100%;
+		left: 0%;
+	}
+	.text_xl {
+		font-size: 150%;
+	}
+	.text_lg {
+		font-size: 66%;
+	}
+
+	.text_md {
+		font-size: 50%;
+	}
+
+	.text_sm {
+		font-size: 33%;
+	}
+
+	.text_xs {
+		font-size: 10%;
+	}
+}
+@media all and (max-width: 500px) {
+	#icon_p {
+		width: 80%;
+		padding-bottom: 80%;
+		left: 10%;
+	}
+	.text_xl {
+		font-size: 200%;
+	}
+	.text_lg {
+		font-size: 110%;
+	}
+
+	.text_md {
+		font-size: 85%;
+	}
+
+	.text_sm {
+		font-size: 50%;
+	}
+
+	.text_xs {
+		font-size: 25%;
+	}
+}
+@media all and (max-width: 900px) {
+	#icon_p {
+		width: 50%;
+		padding-bottom: 50%;
+		left: 25%;
+	}
+	.text_xl {
+		font-size: 250%;
+	}
+	.text_lg {
+		font-size: 125%;
+	}
+
+	.text_md {
+		font-size: 90%;
+	}
+
+	.text_sm {
+		font-size: 66%;
+	}
+
+	.text_xs {
+		font-size: 33%;
+	}
+}
+@media all and (min-width: 900px) {
+	#icon_p {
+		width: 30%;
+		padding-bottom: 30%;
+		left: 35%;
+	}
+	
+}
+

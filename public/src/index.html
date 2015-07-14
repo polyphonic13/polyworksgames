@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	    <meta name="viewport" content="width=device_width, initial_scale=1.0, maximum_scale=1.0, minimum_scale=1.0, user_scalable=no">
 		<title>polyworks</title>
 		<link rel="icon" type="image/png" href="img/polyworks_icon.ico" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 	<body>
+		<div id="site">
 		<div id="icon_p"></div>
-		<div id="nav"></div>
+		<div id="nav_container" class="container">
+			<div id="nav">
+				<div id="info_nav" class="left_nav_btn nav_btn text_md">about</div>
+				<div id="contact_nav" class="left_nav_btn nav_btn text_md">contact</div>
+				<div id="games_nav" class="nav_btn text_md">games</div>
+			</div>
+		</div>
+
+		<!-- Info Section -->
+		<section id="info_container" class="container content_section hide">
+	        <h3>About</h3>
+		</section>
+	
+	    <!-- Contact Section -->
+	    <section id="contact_container" class="container content_section hide">
+	        <div class="row">
+	            <div class="col_lg_8 col_lg_offset_2">
+	                <h3>Contact</h3>
+	                <p>Feel free to contact us to provide some feedback on our games, give us suggestions for new games, or to just say hello!</p>
+	                <p class="centered_text"><a href="mailto:polyworksgames@gmail.com" target="_blank">polyworksgames@gmail.com</a>
+	                </p>
+	                <ul class="list_inline banner_social_buttons centered_text">
+	                    <li>
+	                        <a href="https://twitter.com/kekenews" target=_"blank" class="btn btn_default btn_lg"><i class="fa fa_twitter fa_fw"></i> <span class="network_name">Twitter</span></a>
+	                    </li>
+	                    <li>
+	                     <a href="https://facebook.com/kekevscaterpillars" target=_"blank" class="btn btn_default btn_lg" target=_"blank" ><i class="fa fa_facebook fa_fw"></i> <span class="network_name">Facebook</span></a>
+	                    </li>
+	                    <li>
+	                        <a href="https://plus.google.com/103794850800876367181/about" target=_"blank" class="btn btn_default btn_lg"><i class="fa fa_google_plus fa_fw"></i> <span class="network_name">Google+</span></a>
+	                    </li> 
+	                </ul>
+	            </div>
+	        </div>
+	    </section>
+
+		<!-- Games Section -->
+		<section id="games_container" class="container content_section hide">
+			<h3>Games</h3>
+		</section>
+		</div>
+	<script src="js/polyworks.js"></script>
 	</body>
 </html>

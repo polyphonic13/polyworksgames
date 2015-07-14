@@ -8,6 +8,46 @@ html, body {
 /*	color: black;*/
 }
 
+#site {
+/*	background: url(http://www.polyworksgames.com/img/intro-bg.jpg) no-repeat center;*/
+	background-size: 100% auto;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+a {
+    color: #666666;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #428bca;
+}
+
+.list_inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+
+.list_inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.hide { 
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
 #icon_p {
 	background: url(../img/polyworks_title.png) no-repeat center;
 	background-size: contain;
@@ -18,11 +58,66 @@ html, body {
 	position: relative;
 }
 
-#nav {
-	
+.container {
+/*	background: #123456;*/
+	width: 100%;
+	position: relative;
+	color: #666666;
 }
 
-.centered_title {
+#nav {
+	width: 100%;
+/*	float: right;*/
+}
+/*.nav_button {*/
+
+.nav_btn {
+	display: inline-block;
+	cursor: pointer;
+}
+
+.left_nav_btn {
+	margin-right: 5%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn_lg {
+/*    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+*/}
+
+.btn_default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+#games_nav {
+	float: right;
+}
+
+.centered_text {
 	text-align: center;
 }
 
@@ -52,6 +147,11 @@ html, body {
 		padding-bottom: 100%;
 		left: 0%;
 	}
+	.container {
+		width: 100%;
+		left: 0%;
+	}
+
 	.text_xl {
 		font-size: 150%;
 	}
@@ -77,6 +177,11 @@ html, body {
 		padding-bottom: 80%;
 		left: 10%;
 	}
+	.container {
+		width: 80%;
+		left: 10%;
+	}
+
 	.text_xl {
 		font-size: 200%;
 	}
@@ -102,6 +207,11 @@ html, body {
 		padding-bottom: 50%;
 		left: 25%;
 	}
+	.container {
+		width: 50%;
+		left: 25%;
+	}
+
 	.text_xl {
 		font-size: 250%;
 	}
@@ -123,10 +233,15 @@ html, body {
 }
 @media all and (min-width: 900px) {
 	#icon_p {
-		width: 30%;
-		padding-bottom: 30%;
-		left: 35%;
+		width: 40%;
+		padding-bottom: 40%;
+		left: 30%;
 	}
+	.container {
+		width: 40%;
+		left: 30%;
+	}
+
 	
 }
 

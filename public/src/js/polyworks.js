@@ -1,5 +1,5 @@
 var containerEls = {};
-var navIds = ['info', 'contact', 'games'];
+var navIds = ['about', 'contact', 'games'];
 
 function hideShowContainer(id) {
 	console.log('hideShowContainer');

@@ -1,55 +1,91 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	    <meta name="viewport" content="width=device_width, initial_scale=1.0, maximum_scale=1.0, minimum_scale=1.0, user_scalable=no">
+<!--	    <meta name="viewport" content="width=device_width, initial_scale=1.0, maximum_scale=1.0, minimum_scale=1.0, user_scalable=no"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<title>polyworks</title>
-		<link rel="icon" type="image/png" href="img/polyworks_icon.ico" />
+		<script type="text/javascript">
+		    (function() {
+		        var path = '//easy.myfonts.net/v2/js?sid=10336(font-family=Avenir+35+Light)&sid=10338(font-family=Avenir+55+Roman)&sid=10340(font-family=Avenir+85+Heavy)&sid=10344(font-family=Avenir+65+Medium)&key=5jV6huOpDN',
+		            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
+		            trial = document.createElement('script');
+		        trial.type = 'text/javascript';
+		        trial.async = true;
+		        trial.src = protocol + path;
+		        var head = document.getElementsByTagName("head")[0];
+		        head.appendChild(trial);
+		    })();
+		</script>
+			<link rel="icon" type="image/png" href="img/polyworks_icon.ico" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 	<body>
 		<div id="site">
-		<div id="icon_p"></div>
-		<div id="nav_container" class="container">
-			<div id="nav">
-				<div id="info_nav" class="left_nav_btn nav_btn text_md">about</div>
-				<div id="contact_nav" class="left_nav_btn nav_btn text_md">contact</div>
-				<div id="games_nav" class="nav_btn text_md">games</div>
+<!--			<div id="left_column"> -->
+				<header>
+					<div id="icon_p"></div>
+					<div id="nav_container" class="container">
+						<div id="nav" class="text_lg">
+							<div id="about_nav" class="left_nav_btn nav_btn">about</div>
+							<div id="contact_nav" class="left_nav_btn nav_btn">contact</div>
+							<div id="games_nav" class="nav_btn">games</div>
+						</div>
+					</div>
+				</header>
+<!--				
 			</div>
-		</div>
-
-		<!-- Info Section -->
-		<section id="info_container" class="container content_section hide">
-	        <h3>About</h3>
-		</section>
+			<div id="right_column">
+-->
+				<!-- About Section -->
+				<section id="about_container" class="container container_right hide">
+			        <h2 class="blue1">a b o u t</h2>
+					<p>established in 2014, polyworks is a game development company based in brooklyn, ny. we design 2D and 3D games for all platforms including desktop, mobile and vr.</p>
+				</section>
 	
-	    <!-- Contact Section -->
-	    <section id="contact_container" class="container content_section hide">
-	        <div class="row">
-	            <div class="col_lg_8 col_lg_offset_2">
-	                <h3>Contact</h3>
-	                <p>Feel free to contact us to provide some feedback on our games, give us suggestions for new games, or to just say hello!</p>
-	                <p class="centered_text"><a href="mailto:polyworksgames@gmail.com" target="_blank">polyworksgames@gmail.com</a>
-	                </p>
-	                <ul class="list_inline banner_social_buttons centered_text">
-	                    <li>
-	                        <a href="https://twitter.com/kekenews" target=_"blank" class="btn btn_default btn_lg"><i class="fa fa_twitter fa_fw"></i> <span class="network_name">Twitter</span></a>
-	                    </li>
-	                    <li>
-	                     <a href="https://facebook.com/kekevscaterpillars" target=_"blank" class="btn btn_default btn_lg" target=_"blank" ><i class="fa fa_facebook fa_fw"></i> <span class="network_name">Facebook</span></a>
-	                    </li>
-	                    <li>
-	                        <a href="https://plus.google.com/103794850800876367181/about" target=_"blank" class="btn btn_default btn_lg"><i class="fa fa_google_plus fa_fw"></i> <span class="network_name">Google+</span></a>
-	                    </li> 
-	                </ul>
-	            </div>
-	        </div>
-	    </section>
+			    <!-- Contact Section -->
+			    <section id="contact_container" class="container container_right hide">
+		            <h2 class="blue1">c o n t a c t</h2>
+		            <p>feel free to contact us to provide feedback on our games, give us suggestions for new games, or to just say hello!</p>
+		            <p class="centered_text"><a href="mailto:contact@polyworksgames.com" target="_blank">contact@polyworksgames.com</a>
+		            </p>
+		            <ul class="list_2 list_inline banner_social_buttons centered_text">
+		                <li>
+		                    <a href="https://twitter.com/kekenews" target=_"blank" class="btn btn_default btn_lg"><i class="fa fa_twitter fa_fw"></i> <span class="network_name">twitter</span></a>
+		                </li>
+		                <li>
+		                 <a href="https://facebook.com/kekevscaterpillars" target=_"blank" class="btn btn_default btn_lg" target=_"blank" ><i class="fa fa_facebook fa_fw"></i> <span class="network_name">facebook</span></a>
+		                </li>
+		                <li>
+		                    <a href="https://plus.google.com/103794850800876367181/about" target=_"blank" class="btn btn_default btn_lg"><i class="fa fa_google_plus fa_fw"></i> <span class="network_name">google+</span></a>
+		                </li> 
+		            </ul>
+			    </section>
 
-		<!-- Games Section -->
-		<section id="games_container" class="container content_section hide">
-			<h3>Games</h3>
-		</section>
+				<!-- Games Section -->
+				<section id="games_container" class="container container_right hide">
+					<h2 class="blue1">g a m e s</h2>
+					<p>check out our current and upcoming games</p>
+					<ul class="list_2 list_stacked">
+						<li>
+							<h3 class="blue1">farkle safari</h3>
+							<p>an html5 farkle tournament held against animals from around the world.</p><p>released: january 2015</p>
+							<a href="http://www.polyworksgames.com/games/farkle" target="_blank"><div id="farkle_ss" class="game_ss"></div></a>
+						</li>
+						<li>
+							<h3 class="blue1">keke and the grey expanse</h3>
+							<p>keke battles caterpillars and spiders searching for the color crystals in a grey land, in this html5 game for desktop and mobile.</p><p>released: july 2014</p>
+							<a href="http://keke.tresensa.com/" target="_blank"><div id="keke_ss" class="game_ss"></div></a>
+						</li>
+						<li>
+							<h3 class="blue1">dreams of yesterday</h3>
+							<p>solve mysteries, explore the past and help save the future in this 3D adventure game for mac and windows.</p><p>coming soon</p>
+							<!--<a href="" target="_blank">--><div id="doy_ss" class="game_ss"></div><!--</a>-->
+						</li>
+					</ul>
+				</section>
+
+<!--			<div> -->
 		</div>
-	<script src="js/polyworks.js"></script>
+		<script src="js/polyworks.js"></script>
 	</body>
 </html>

@@ -1,0 +1,21 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: inline-block;
+	width: 50%;
+	padding-bottom: 50%;
+}
+
+#container1 {
+	background: #123456;
+}
+
+#container2 {
+	background: #654321;
+	float: right;
+	
+	overflow-y: auto;
+}

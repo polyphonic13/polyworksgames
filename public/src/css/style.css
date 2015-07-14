@@ -11,25 +11,35 @@ html, body {
 	margin: 0;
 	padding: 0;
 	
-	font-family: 'Avenir 35 Light' Helvetica;
+	font-family: 'Avenir 35 Light', Helvetica, sans-serif;
 
 	color: #666666;
-/*	color: #ccc;*/
+/*	color: #ccc;*/ 
 }
 
-#left_column {
-	width: 50%;
+.column {
+	width: 48%;
+/*	padding-bottom: 48%;*/
+	padding: 1%;
+	display: inline-block;
 }
 
-#right_column {
-	width: 50%;
+#column1 {
+/*	background: #123456;*/
+	position: fixed;
+}
+
+#column2 {
+/*	background: #654321;*/
 	float: right;
 	overflow-y: auto;
 }
 
+
 #site {
-	margin-left: -5%;
+/*	margin-left: -5%;*/
 }
+
 
 a {
     color: #666666;
@@ -194,50 +204,17 @@ a:hover {
 	background-image: url(../img/doy_ss.png);
 }
 
-@media all and (min-width: 900px) {
-	#icon_p {
-		width: 40%;
-		padding-bottom: 30%;
-		left: 30%;
+@media all and (max-width: 728px) {
+	.column {
+		width: 98%;
+		display: block;
 	}
-	.container {
-		width: 40%;
-		left: 30%;
+	#column1 {
+		position: relative;
 	}
-
-	
-}
-@media all and (max-width: 900px) {
-	#icon_p {
-		width: 50%;
-		padding-bottom: 37.5%;
-		left: 25%;
+	#column2 {
+		float: none;
 	}
-	.container {
-		width: 50%;
-		left: 25%;
-	}
-
-	.text_xl {
-		font-size: 250%;
-	}
-	.text_lg {
-		font-size: 125%;
-	}
-
-	.text_md {
-		font-size: 90%;
-	}
-
-	.text_sm {
-		font-size: 66%;
-	}
-
-	.text_xs {
-		font-size: 33%;
-	}
-}
-@media all and (max-width: 500px) {
 	#icon_p {
 		width: 80%;
 		padding-bottom: 60%;
@@ -268,6 +245,16 @@ a:hover {
 	}
 }
 @media all and (max-width: 320px) {
+	.column {
+		width: 98%;
+		display: block;
+	}
+	#column1 {
+		position: relative;
+	}
+	#column2 {
+		float: none;
+	}
 	#icon_p {
 		width: 100%;
 		padding-bottom: 75%;
@@ -297,4 +284,3 @@ a:hover {
 		font-size: 10%;
 	}
 }
-

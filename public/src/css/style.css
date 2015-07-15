@@ -5,16 +5,22 @@ font-family: 'Avenir 55 Roman'
 font-family: 'Avenir 85 Heavy'
 font-family: 'Avenir 65 Medium'
 */
+@font-face {
+  font-family: 'Avenir 35 Light';
+  src: url('2EABE9_0_0.eot'); /* IE9 Compat Modes */
+  src: url('2EABE9_0_0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('2EABE9_0_0.woff2') format('woff2'), /* Super Modern Browsers */
+       url('2EABE9_0_0.woff') format('woff'), /* Pretty Modern Browsers */
+       url('2EABE9_0_0.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
 
-html, body {
-/*	background: #000;*/
+body {
 	margin: 0;
 	padding: 0;
 	
 	font-family: 'Avenir 35 Light', Helvetica, sans-serif;
 
 	color: #666666;
-/*	color: #ccc;*/ 
 }
 
 .column {

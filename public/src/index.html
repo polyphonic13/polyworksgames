@@ -1,22 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-<!--	    <meta name="viewport" content="width=device_width, initial_scale=1.0, maximum_scale=1.0, minimum_scale=1.0, user_scalable=no"> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 		<meta name="google-site-verification" content="3ZZguv4wJVwXkpQ5RrcEnbNuuwNKJdWGv43Y1MqKEnI" />
 		<title>polyworks</title>
-		<script type="text/javascript">
-		    (function() {
-		        var path = '//easy.myfonts.net/v2/js?sid=10336(font-family=Avenir+35+Light)&sid=10338(font-family=Avenir+55+Roman)&sid=10340(font-family=Avenir+85+Heavy)&sid=10344(font-family=Avenir+65+Medium)&key=5jV6huOpDN',
-		            protocol = ('https:' == document.location.protocol ? 'https:' : 'http:'),
-		            trial = document.createElement('script');
-		        trial.type = 'text/javascript';
-		        trial.async = true;
-		        trial.src = protocol + path;
-		        var head = document.getElementsByTagName("head")[0];
-		        head.appendChild(trial);
-		    })();
-		</script>
+
 		<!--
 		/**
 		 * @license
@@ -48,6 +36,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 	<body>
+		<div id="modal" class="modal hide"></div>
 		<div id="site">
 			<div id="column1" class="column"> 
 				<header>
@@ -95,24 +84,17 @@
 					<p>check out our current and upcoming games</p>
 					<ul class="list_2 list_stacked">
 						<li>
-							<h3 class="blue1">dreams of yesterday</h3>
-							<p>solve mysteries, explore the past and help save the future in this 3D adventure game for mac and windows.</p><p>coming in spring 2016</p>
-							<!--<a href="" target="_blank">--><div id="doy_ss" class="game_ss"></div><!--</a>-->
+							<h3 class="blue1" onclick="openGameModal('doy');">dreams of yesterday</h3>
 						</li>
 						<li>
-							<h3 class="blue1">farkle safari</h3>
-							<p>an html5 farkle tournament held against animals from around the world.</p><p>released january 2015</p>
-							<a href="http://www.polyworksgames.com/games/farkle" target="_blank"><div id="farkle_ss" class="game_ss"></div></a>
+							<h3 class="blue1" onclick="openGameModal('farkle');">farkle safari</h3>
 						</li>
 						<li>
-							<h3 class="blue1">keke and the grey expanse</h3>
-							<p>keke battles caterpillars and spiders searching for the color crystals in a grey land, in this html5 game for desktop and mobile.</p><p>released july 2014</p>
-							<a href="http://keke.tresensa.com/" target="_blank"><div id="keke_ss" class="game_ss"></div></a>
+							<h3 class="blue1" onclick="openGameModal('keke');">keke and the grey expanse</h3>
 						</li>
 					</ul>
 				</section>
-
-			<div>
+			</div>
 		</div>
 		<script src="js/polyworks.js"></script>
 	</body>

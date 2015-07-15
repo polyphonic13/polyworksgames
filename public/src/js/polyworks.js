@@ -19,7 +19,6 @@ function hideShowContainer(id) {
 	
 	for(var key in containerEls) {
 		container = containerEls[key];
-		console.log('\tcontainer['+key+'].id = ' + container.id + ', id = ' + id);
 		if(container.id === id) {
 			container.classList.add('show');
 			container.classList.remove('hide');

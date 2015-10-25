@@ -1,3 +1,4 @@
 .DS_Store
 grunt/data/meta.json
 public/build/
+node_modules/*

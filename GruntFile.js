@@ -38,27 +38,24 @@ module.exports = function(grunt) {
 			},
 			main: {
 				options: {
-					banner: "(function(){(typeof console === 'undefined' || typeof console.log === 'undefined')?console={log:function(){}}:console.log('----- KEKE_GAME.JS v<%= pkg.version %> created: <%= grunt.template.today(\"isoDateTime\") %>')})();\n"
+					banner: "(function(){(typeof console === 'undefined' || typeof console.log === 'undefined')?console={log:function(){}}:console.log('----- polyworksgames v<%= pkg.version %> created: <%= grunt.template.today(\"isoDateTime\") %>')})();\n"
 				},
-				src: [],
-				dest: ''
+				src: [
+					'<%= srcDir %>/js/polyworks.js'
+				],
+				dest: '<%= buildDir %>/js/polyworks.js'
 			}
 		},
 		// MINIFICATION
 		// task docs: https://github.com/gruntjs/grunt-contrib-uglify
 		uglify: {
-			options: {
-
-				// banner inserted at top of the output file
-				banner: '/*! <%= pkg.name %> v<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-				preserveComments: false,
-				compress: true,
-				// report: 'gzip'
-				report: 'min'
-			},
 			main: {
-				src: [ '' ],
-				dest: ''
+				expand: true,
+				report: 'gzip',
+				cwd: '<%= buildDir %>/js/',
+				src: ['**/*.js', '!*.min.js'],
+				dest: '<%= buildDir %>/js/',
+				ext: '.min.js'
 			}
 		},
 		// COPYING
@@ -85,16 +82,32 @@ module.exports = function(grunt) {
 					dest: '<%= buildDir %>/font-awesome-4.1.0/'
 				},
 				{
-					expand: true, 
-					cwd: '<%= srcDir %>/js/',
-					src: [ '**' ],
-					dest: '<%= buildDir %>/js/'
-				},
-				{
 					expand: true,
 					cwd: '<%= srcDir %>/',
 					src: [ '*.html' ],
 					dest: '<%= buildDir %>/'
+				}]
+			}
+		},
+		// REPLACE 
+		// docs: https://github.com/outaTiME/grunt-replace
+		replace: {
+			main: {
+				options: {
+					patterns: [
+					{
+						match: /polyworks.js/gi,
+						replacement: function() {
+							return 'polyworks.min.js';
+						}
+					}
+				]
+				},
+				files: [{
+					expand: true,
+					cwd: '<%= buildDir %>',
+					src: ['**/*.html'],
+					dest: '<%= buildDir %>'
 				}]
 			}
 		},
@@ -157,6 +170,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-replace');
 	grunt.loadNpmTasks('grunt-scp');
 	grunt.loadNpmTasks('grunt-connect');
 	
@@ -164,9 +178,10 @@ module.exports = function(grunt) {
 		'default', 
 		[
 			'clean',
-			// 'concat', 
-			// 'uglify', 
-			'copy'
+			'concat',
+			'uglify',
+			'copy',
+			'replace'
 		]
 	);
 	

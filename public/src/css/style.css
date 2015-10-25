@@ -41,6 +41,16 @@ a:hover {
     color: #428bca;
 }
 
+#ee_canvas {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	position: absolute;
+	z-index: 10000002;
+}
+
 .column {
 	width: 48%;
 	padding: 0 1% 48% 1%; 
@@ -56,7 +66,8 @@ a:hover {
 }
 
 #section_container {
-	background: rgba(238, 238, 255, 0.66);
+/*	background: rgba(238, 238, 255, 0.66);*/
+	background: rgba(125, 134, 159, 0.1);
 	border: 1px #ddd solid;
 	width: 90%;
 	height: 90%;
@@ -64,7 +75,7 @@ a:hover {
 	top: 3%;
 	padding: 2%;
 	position: absolute;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 .list_2 {

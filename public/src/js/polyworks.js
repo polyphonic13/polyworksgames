@@ -1,13 +1,19 @@
 var containerEls = {};
+var sectionContainerEl;
 var modalEl; 
 var modalContentEl;
 var modalOpen = false;
+var sectionContainerShown = false;
 var navIds = ['about', 'contact', 'games'];
 var gameModalContent = {
 	doy: '<div id="doy_game" class="game_modal"><span class="close_x" onclick="hideShowModal(false)">X</span><div class="game_content"><h3 class="blue1">dreams of yesterday</h3><p>solve mysteries, explore the past and help save the future in a 3D adventure game for mac and windows.</p><p class="release_date"><b>coming in spring 2016</b></p></div><div id="doy_ss" class="game_ss"></div></div>',
 	farkle: '<div id="doy_game" class="game_modal"><span class="close_x" onclick="hideShowModal(false)">X</span><div class="game_content"><h3 class="blue1">farkle safari</h3><p>an html5 farkle tournament held against animals from around the world.</p><p class="release_date"><b>released january 2015</b></p></div><a href="http://www.polyworksgames.com/games/farkle" target="_blank"><div id="farkle_ss" class="game_ss"></div></a></div>',
 	keke: '<div id="doy_game" class="game_modal"><span class="close_x" onclick="hideShowModal(false)">X</span><div class="game_content"><h3 class="blue1">keke and the grey expanse</h3><p>keke battles caterpillars and spiders searching for the color crystals in a grey land, in this html5 game for desktop and mobile.</p><p class="release_date"><b>released july 2014</b></p></div><a href="http://keke.tresensa.com/" target="_blank"><div id="keke_ss" class="game_ss"></div></a></div>'
 };
+
+function openLink(url) {
+	window.open(url);
+}
 
 function hideShowContainer(id) {
 	console.log('hideShowContainer');
@@ -17,16 +23,34 @@ function hideShowContainer(id) {
 		hideShowModal(false);
 	}
 	
+	if(id !== '') {
+		if(!sectionContainerShown) {
+			showEl(sectionContainer);
+			sectionContainerShown = true;
+		}
+	} else {
+		hideEl(sectionContainer);
+		sectionContainerShown = false;
+	}
+	
 	for(var key in containerEls) {
 		container = containerEls[key];
 		if(container.id === id) {
-			container.classList.add('show');
-			container.classList.remove('hide');
+			showEl(container);
 		} else {
-			container.classList.remove('show');
-			container.classList.add('hide');
+			hideEl(container);
 		}
 	}
+}
+
+function hideEl(el) {
+	el.classList.remove('show');
+	el.classList.add('hide');
+}
+
+function showEl(el) {
+	el.classList.remove('hide');
+	el.classList.add('add');
 }
 
 function hideShowModal(show) {
@@ -75,6 +99,8 @@ function openGameModal(gameId) {
 		}(modalEl),
 		false
 	);
+	
+	sectionContainer = document.getElementById('section_container');
 	modalContentEl = document.createElement('div');
 	modalEl.appendChild(modalContentEl);
 	

@@ -53,11 +53,10 @@ a:hover {
 
 #column2 {
 	float: right;
-	overflow-y: hidden;
 }
 
 #section_container {
-	background: #eef;
+	background: rgba(238, 238, 255, 0.66);
 	border: 1px #ddd solid;
 	width: 90%;
 	height: 90%;
@@ -65,6 +64,7 @@ a:hover {
 	top: 3%;
 	padding: 2%;
 	position: absolute;
+	overflow: scroll;
 }
 
 .list_2 {
@@ -124,7 +124,6 @@ a:hover {
 
 #nav {
 	width: 100%;
-/*	float: right;*/
 }
 
 .nav_btn {
@@ -140,7 +139,6 @@ a:hover {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
-    font-size: 14px;
     font-weight: 400;
     line-height: 1.42857143;
     text-align: center;
@@ -152,8 +150,6 @@ a:hover {
     -ms-user-select: none;
     user-select: none;
     background-image: none;
-    border: 1px solid transparent;
-/*    border-radius: 4px;*/
 }
 
 .btn_default {
@@ -263,39 +259,24 @@ a:hover {
 	display: block;
 }
 
-@media all and (max-width: 728px) {
-	.column {
-		width: 98%;
-		padding: 1% 0 1% 0; 
-		display: block;
+@media all and (max-width: 900px) {
+	h1, h2 {
+		-webkit-margin-before: 0.4em;
+		-webkit-margin-after: 0.4em;
 	}
-	#column1 {
-		position: relative;
-	}
-	#column2 {
-		float: none;
-	}
-	#icon_p {
-		width: 80%;
-		padding-bottom: 60%;
-		left: 10%;
-	}
-	.container {
-		width: 80%;
-		left: 10%;
-	}
-	.game_modal {
-		width: 90%;
-		margin-bottom: 90%;
-		left: 5%;
-		top: 5%;
+}
+
+@media all and (max-width: 800px) {
+	h1, h2 {
+		-webkit-margin-before: 0.3em;
+		-webkit-margin-after: 0.3em;
 	}
 
 	.text_xl {
 		font-size: 200%;
 	}
 	.text_lg {
-		font-size: 110%;
+		font-size: 90%;
 	}
 
 	.text_md {
@@ -310,45 +291,41 @@ a:hover {
 		font-size: 25%;
 	}
 }
-@media all and (max-width: 320px) {
+
+@media all and (max-width: 530px) {
+	#site {
+		background: url(../img/polyworks_p.png) no-repeat;
+		background-position: center 66%;
+		background-size: contain;
+		left: 0;
+		top: 0;
+		right: 0; 
+		bottom: 0;
+		position: absolute;
+	}
+	#icon_p {
+		background: url(../img/polyworks_text.png) no-repeat center;
+		background-size: contain;
+		padding-bottom: 16%;
+	}
+
 	.column {
-		width: 98%;
-		padding: 1% 0 1% 0; 
-		display: block;
+		width: 96%;
+		padding: 0 1% 0 1%;
 	}
 	#column1 {
+		height: 25vw;
 		position: relative;
 	}
 	#column2 {
+		height: 96vw;
 		float: none;
 	}
-	#icon_p {
-		width: 100%;
-		padding-bottom: 75%;
-		left: 0%;
-	}
-	.container {
-		width: 100%;
-		left: 0%;
-	}
 
-	.text_xl {
-		font-size: 150%;
-	}
-	.text_lg {
-		font-size: 5px;
-	}
-
-	.text_md {
-		font-size: 50%;
-	}
-
-	.text_sm {
-		font-size: 33%;
-	}
-
-	.text_xs {
-		font-size: 10%;
+	.game_modal {
+		width: 90%;
+		margin-bottom: 90%;
+		left: 5%;
+		top: 5%;
 	}
 }
-

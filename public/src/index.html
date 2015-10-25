@@ -52,12 +52,12 @@
 			</div>
 			<div id="column2" class="column">
 				<div id="modal" class="modal hide"></div>
-				<div id="section_container">
+				<div id="section_container" class="hide">
 				<!-- About Section -->
 				<section id="about_container" class="container container_right hide">
 			        <h2 class="blue1">a b o u t</h2>
 					<div class="content_holder">
-						<p>established in 2014, polyworks is a game development company based in brooklyn, ny. we design 2D and 3D games for all platforms including desktop, mobile and oculus rift.</p>
+						<div class="text_md">established in 2014, polyworks is a game development company based in brooklyn, ny. we design 2D and 3D games for all platforms including desktop, mobile and oculus rift.</div>
 					</div>
 				</section>
 	
@@ -65,18 +65,20 @@
 			    <section id="contact_container" class="container container_right hide">
 		            <h2 class="blue1">c o n t a c t</h2>
 					<div class="content_holder">
-						<p>feel free to contact us to provide feedback on our games, give us suggestions for new games, or to just say hello!</p>
-		            	<p class="centered_text"><a href="mailto:contact@polyworksgames.com" target="_blank">contact@polyworksgames.com</a></p>
-			            <ul class="list_2 list_inline banner_social_buttons centered_text">
-			                <li>
-			                    <a href="https://twitter.com/kekenews" target=_"blank" class="btn btn_default btn_lg"><i class="fa fa_twitter fa_fw"></i> <span class="network_name">twitter</span></a>
+						<div class="text_md">feel free to contact us to provide feedback on our games, give us suggestions for new games, or to just say hello!</div>
+			            <ul class="list_2 list_stacked">
+			                <li onclick="openLink('https://twitter.com/kekenews');">
+			                    <a href="https://twitter.com/kekenews" target=_"blank" class="btn btn_default text_lg">twitter</a>
 			                </li>
-			                <li>
-			                 <a href="https://facebook.com/kekevscaterpillars" target=_"blank" class="btn btn_default btn_lg" target=_"blank" ><i class="fa fa_facebook fa_fw"></i> <span class="network_name">facebook</span></a>
+			                <li onclick="openLink('https://facebook.com/kekevscaterpillars');">
+			                 <a href="https://facebook.com/kekevscaterpillars" target=_"blank" class="btn btn_default text_lg" target=_"blank" >facebook</a>
 			                </li>
-			                <li>
-			                    <a href="https://www.google.com/+PolyworksgamesProfile" target=_"blank" class="btn btn_default btn_lg"><i class="fa fa_google_plus fa_fw"></i> <span class="network_name">google+</span></a>
+			                <li onclick="openLink('https://www.google.com/+PolyworksgamesProfile');">
+			                    <a href="https://www.google.com/+PolyworksgamesProfile" target=_"blank" class="btn btn_default text_lg">google+</a>
 			                </li> 
+							<li>
+								<a href="mailto:contact@polyworksgames.com" class="btn btn_default text_lg">email</a>
+							</li>
 			            </ul>
 					</div>
 			    </section>
@@ -85,16 +87,16 @@
 				<section id="games_container" class="container container_right hide">
 					<h2 class="blue1">g a m e s</h2>
 					<div class="content_holder">
-						<p>check out our current and upcoming games</p>
+						<div class="text_md">check out our current and upcoming games</div>
 						<ul class="list_2 list_stacked">
 							<li onclick="openGameModal('doy');">
-								<h3 class="">dreams of yesterday</h3>
+								<div class="btn btn_default text_lg">dreams of yesterday</div>
 							</li>
 							<li onclick="openGameModal('farkle');">
-								<h3 class="">farkle safari</h3>
+								<div class="btn btn_default text_lg">farkle safari</div>
 							</li>
 							<li onclick="openGameModal('keke');">
-								<h3 class="">keke and the grey expanse</h3>
+								<div class="btn btn_default text_lg">keke and the grey expanse</div>
 							</li>
 						</ul>
 					</div>

@@ -1,6 +1,7 @@
 {
   "name": "PolyworksGames",
   "version": "0.1.0",
+  "repository": "git@github.com:polyphonic13/polyworksgames.git",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-concat": "~0.3.0",
